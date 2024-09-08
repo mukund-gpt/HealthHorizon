@@ -1,10 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
+const corsOptions = { origin: "http://localhost:5173", credentials: true };
 
 mongoose
   .connect(process.env.MONGO_DB_URL)
@@ -23,6 +25,7 @@ app.get("/", (req, res) => {
   res.send("QWERTY");
 });
 
+app.use(cors(corsOptions));
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies (for forms)
 
