@@ -189,6 +189,7 @@ i span {
     font-size: 15px;
     color: white;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
 .signup a {

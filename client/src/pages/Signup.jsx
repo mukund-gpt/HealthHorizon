@@ -184,7 +184,7 @@ export const Signup = () => {
             Already have an account?
             <a
               onClick={() => {
-                navigate("/");
+                navigate("/login");
               }}
             >
               Login Now
